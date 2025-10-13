@@ -1,0 +1,169 @@
+<?xml version='1.0'?>
+<ns2:test-suite xmlns:ns2='urn:model.allure.qatools.yandex.ru' start='1760382971086' stop='1760382978368'>
+    <name>Authentication API Tests:</name>
+    <title>Authentication API Tests:</title>
+    <test-cases>
+        <test-case start='1760382971087' status='passed' stop='1760382972644'>
+            <name>Login with valid credentials</name>
+            <title>Login with valid credentials</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='codeceptjs'/>
+            </labels>
+            <parameters/>
+            <steps>
+                <step start='1760382971100' status='passed' stop='1760382972641'>
+                    <name>I send post request "/api/login", {"email":"test@ridervolt.com","password":"password123"}</name>
+                    <title>I send post request "/api/login", {"email":"test@ridervolt.com","password":"password123"}</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+            </steps>
+            <attachments/>
+        </test-case>
+        <test-case start='1760382972648' status='passed' stop='1760382973535'>
+            <name>Login with invalid credentials</name>
+            <title>Login with invalid credentials</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='codeceptjs'/>
+            </labels>
+            <parameters/>
+            <steps>
+                <step start='1760382972652' status='passed' stop='1760382973534'>
+                    <name>I send post request "/api/login", {"email":"invalid@example.com","password":"wrongpassword"}</name>
+                    <title>I send post request "/api/login", {"email":"invalid@example.com","password":"wrongpassword"}</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+            </steps>
+            <attachments/>
+        </test-case>
+        <test-case start='1760382973537' status='passed' stop='1760382974049'>
+            <name>Login with missing credentials</name>
+            <title>Login with missing credentials</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='codeceptjs'/>
+            </labels>
+            <parameters/>
+            <steps>
+                <step start='1760382973540' status='passed' stop='1760382974049'>
+                    <name>I send post request "/api/login", {}</name>
+                    <title>I send post request "/api/login", {}</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+            </steps>
+            <attachments/>
+        </test-case>
+        <test-case start='1760382974050' status='passed' stop='1760382974956'>
+            <name>Login with missing email</name>
+            <title>Login with missing email</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='codeceptjs'/>
+            </labels>
+            <parameters/>
+            <steps>
+                <step start='1760382974051' status='passed' stop='1760382974955'>
+                    <name>I send post request "/api/login", {"password":"password123"}</name>
+                    <title>I send post request "/api/login", {"password":"password123"}</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+            </steps>
+            <attachments/>
+        </test-case>
+        <test-case start='1760382974958' status='passed' stop='1760382975707'>
+            <name>Login with missing password</name>
+            <title>Login with missing password</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='codeceptjs'/>
+            </labels>
+            <parameters/>
+            <steps>
+                <step start='1760382974960' status='passed' stop='1760382975706'>
+                    <name>I send post request "/api/login", {"email":"test@ridervolt.com"}</name>
+                    <title>I send post request "/api/login", {"email":"test@ridervolt.com"}</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+            </steps>
+            <attachments/>
+        </test-case>
+        <test-case start='1760382975709' status='passed' stop='1760382976829'>
+            <name>Registration attempt</name>
+            <title>Registration attempt</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='codeceptjs'/>
+            </labels>
+            <parameters/>
+            <steps>
+                <step start='1760382975712' status='passed' stop='1760382976827'>
+                    <name>I send post request "/api/register", {"email":"test4236@example.com","password":"securePassword123","full_name":"Test User","phone":"1234567890"}</name>
+                    <title>I send post request "/api/register", {"email":"test4236@example.com","password":"securePassword123","full_name":"Test User","phone":"1234567890"}</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+            </steps>
+            <attachments/>
+        </test-case>
+        <test-case start='1760382976831' status='passed' stop='1760382977544'>
+            <name>Token validation</name>
+            <title>Token validation</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='codeceptjs'/>
+            </labels>
+            <parameters/>
+            <steps>
+                <step start='1760382976834' status='passed' stop='1760382977543'>
+                    <name>I send post request "/api/login", {"email":"test@ridervolt.com","password":"password123"}</name>
+                    <title>I send post request "/api/login", {"email":"test@ridervolt.com","password":"password123"}</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+            </steps>
+            <attachments/>
+        </test-case>
+        <test-case start='1760382977550' status='passed' stop='1760382977976'>
+            <name>Password reset request</name>
+            <title>Password reset request</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='codeceptjs'/>
+            </labels>
+            <parameters/>
+            <steps>
+                <step start='1760382977552' status='passed' stop='1760382977974'>
+                    <name>I send post request "/api/forgot-password", {"email":"test@ridervolt.com"}</name>
+                    <title>I send post request "/api/forgot-password", {"email":"test@ridervolt.com"}</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+            </steps>
+            <attachments/>
+        </test-case>
+        <test-case start='1760382977976' status='passed' stop='1760382978366'>
+            <name>Password reset with invalid token</name>
+            <title>Password reset with invalid token</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='codeceptjs'/>
+            </labels>
+            <parameters/>
+            <steps>
+                <step start='1760382977980' status='passed' stop='1760382978365'>
+                    <name>I send post request "/api/reset-password", {"token":"invalid_token","password":"newPassword123","confirmPassword":"newPassword123"}</name>
+                    <title>I send post request "/api/reset-password", {"token":"invalid_token","password":"newPassword123","confirmPassword":"newPassword123"}</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+            </steps>
+            <attachments/>
+        </test-case>
+    </test-cases>
+</ns2:test-suite>

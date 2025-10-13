@@ -10,7 +10,7 @@ RiderVolt API Tests is a test suite designed to validate the functionality and r
 
 - Comprehensive authentication testing
 - REST API request validation
-- Automatic test reporting
+- Automatic test reporting with detailed Allure reports
 - Modular test organization
 
 ## Technology Stack
@@ -18,6 +18,7 @@ RiderVolt API Tests is a test suite designed to validate the functionality and r
 - [Node.js](https://nodejs.org/) - JavaScript runtime environment
 - [CodeceptJS](https://codecept.io/) - End-to-end testing framework
 - [REST Helper](https://codecept.io/helpers/REST/) - API testing support for CodeceptJS
+- [Allure](https://docs.qameta.io/allure/) - Test report generator
 
 ## Getting Started
 
@@ -67,6 +68,14 @@ To run only authentication tests:
 
 ```bash
 npm run test:auth
+```
+
+To run tests with Allure reporting:
+
+```bash
+npm run test:allure
+npm run allure:report
+npm run allure:open
 ```
 
 ## Test Structure

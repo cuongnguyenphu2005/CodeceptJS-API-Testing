@@ -26,6 +26,11 @@ exports.config = {
   plugins: {
     retryFailedStep: {
       enabled: true
+    },
+    allure: {
+      enabled: true,
+      require: '@codeceptjs/allure-legacy',
+      outputDir: './output/allure-results'
     }
   }
 }
