@@ -5,22 +5,21 @@ const assert = require('assert');
 
 // Test valid login credentials
 Scenario('Login with valid credentials', async ({ I }) => {
-  // Using sample credentials - replace with valid test credentials
+  // Using credentials from environment variables
   const res = await I.sendPostRequest('/api/login', {
-    email: 'test@ridervolt.com',
-    password: 'password123'
+    email: process.env['USERNAME-LOGIN-SUCCESS'],
+    password: process.env['PASSWORD-LOGIN-SUCCESS']
   });
   
   console.log('Login response status:', res.status);
   console.log('Login response data:', res.data);
   
-  // If API returns 200, validate token exists
-  if (res.status === 200) {
-    assert(res.data.token, 'Token should exist in successful login response');
-    console.log('Login successful with valid token');
-  } else {
-    console.log('Note: This test will fail if credentials are invalid. Update with valid test credentials.');
-  }
+  // Explicitly assert that status code must be 200 for success
+  assert.strictEqual(res.status, 200, 'Valid login should return status code 200');
+  
+  // After confirming status is 200, validate token exists
+  assert(res.data.token, 'Token should exist in successful login response');
+  console.log('Login successful with valid token');
 });
 
 // Test invalid login credentials

@@ -12,6 +12,7 @@ RiderVolt API Tests is a test suite designed to validate the functionality and r
 - REST API request validation
 - Automatic test reporting with detailed Allure reports
 - Modular test organization
+- Environment-based configuration for secure testing
 
 ## Technology Stack
 
@@ -42,12 +43,32 @@ RiderVolt API Tests is a test suite designed to validate the functionality and r
 
 ### Configuration
 
-The tests are configured to run against the RiderVolt backend API. You can update the API endpoint in the `codecept.conf.js` file:
+The tests are configured to run against the RiderVolt backend API using environment variables for security.
+
+1. Create a `.env` file based on the provided `.env.example`:
+   ```bash
+   cp .env.example .env
+   ```
+
+2. Edit your `.env` file with actual values:
+   ```
+   END-POINT=https://your-actual-api-endpoint.com
+   USERNAME-LOGIN-SUCCESS=your-actual-username
+   PASSWORD-LOGIN-SUCCESS=your-actual-password
+   ```
+
+> **IMPORTANT**: Never commit your `.env` file with actual credentials to the repository. The `.gitignore` file is already set up to exclude it.
+
+The configuration in `codecept.conf.js` uses these environment variables:
 
 ```javascript
 helpers: {
   REST: {
-    endpoint: 'https://backend.ridervolt.app', // Replace with your API endpoint
+    endpoint: process.env['END-POINT'],
+    // other configuration...
+  }
+}
+    endpoint: 'Replace with your API endpoint', // 
     defaultHeaders: {
       'Content-Type': 'application/json',
       'Accept': 'application/json'

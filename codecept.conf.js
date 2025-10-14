@@ -1,4 +1,5 @@
 const { setHeadlessWhen, setCommonPlugins } = require('@codeceptjs/configure');
+require('dotenv').config(); // Add this to load environment variables from .env file
 
 // turn on headless mode when running with HEADLESS=true environment variable
 // export HEADLESS=true && npx codeceptjs run
@@ -12,7 +13,7 @@ exports.config = {
   output: './output',
   helpers: {
     REST: {
-      endpoint: 'https://backend.ridervolt.app',  // Removed trailing slash
+      endpoint: process.env['END-POINT'],  // Use environment variable with fallback
       defaultHeaders: {
         'Content-Type': 'application/json',
         'Accept': 'application/json'
