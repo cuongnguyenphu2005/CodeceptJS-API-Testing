@@ -9,7 +9,7 @@ setHeadlessWhen(process.env.HEADLESS);
 setCommonPlugins();
 
 exports.config = {
-  tests: './tests/auth_test.js',  // Only run auth tests
+  tests: './tests/all_test.js',  // Only run auth tests
   output: './output',
   helpers: {
     REST: {

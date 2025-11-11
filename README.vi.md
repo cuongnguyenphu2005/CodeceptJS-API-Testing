@@ -66,7 +66,7 @@ npm test
 Để chỉ chạy các bài kiểm tra xác thực:
 
 ```bash
-npm run test:auth
+npm run test:all_test
 ```
 
 ## Cấu trúc bài kiểm tra
